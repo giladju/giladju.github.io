@@ -15,8 +15,11 @@ The following recommended reading is based on a few basic assumptions:
 ## Internet Networking
 
 * [AWS Routing 101](https://medium.com/@mda590/aws-routing-101-67879d23014d#.x6773gofo)
-
 * [Understanding an IP Address: Cisco Router Training 101](https://www.youtube.com/watch?v=LxNgWsseE0w)
-
 * [8 Steps to understanding IP Subnetting](https://www.techopedia.com/6/28587/internet/8-steps-to-understanding-ip-subnetting)
+
+## Linux command line basics
+
+* [linuxcommand.org](http://linuxcommand.org/)
+* [bash 101](https://www.linux.com/learn/bash-101-working-cli)
 
