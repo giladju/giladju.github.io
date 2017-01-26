@@ -28,7 +28,7 @@ github_username:  giladju
 
 # Build settings
 markdown: kramdown
-theme: jekyll-theme-hacker
+theme: minima
 gems:
   - jekyll-feed
 exclude:
