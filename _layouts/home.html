@@ -1,0 +1,28 @@
+---
+layout: default
+---
+
+<div class="home">
+
+  {{<h1 class="page-heading"></h1>}}
+  
+  {{ content }}
+  Welcome to the blog, I will be posting topics ranging from recomended reading 
+  to training sessions and tips and tricks
+  Comments will be welcome on my twitter account - see below
+
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+        <h2>
+          <a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a>
+        </h2>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | relative_url }}">via RSS</a></p>
+
+</div>
