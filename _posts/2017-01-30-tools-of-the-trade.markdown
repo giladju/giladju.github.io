@@ -88,6 +88,7 @@ Read more about `grep` and `find`:
 man grep
 man find
 ```
+
 ## Quick-scripting to check state of files in the system
 
 OK, I managed to find hints in the logs as to where were the files, or at least figured out that indeed the script was running - but still the files did not end up where I expected them to be, i.e. not in `/var/app/current/resources`
