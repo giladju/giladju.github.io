@@ -10,6 +10,6 @@ Married+3, cyclists, graveler
 
 With over 20 years of Sys Admin, IT, QA & DevOps experience
 
-[Cycling & DevOps blog (English)](http://devops.judes.co.il)
+[Cycling blog (English)](http://blog.judes.co.il)
 
-[Cycling blog (hebrew)](http://bike.judes.co.il)
+[Cycling blog (Hebrew)](http://bike.judes.co.il)
