@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Learning new stuff with Docker, neo4j export/import"
-date:   2017-01-25 11:14:49 +0200
+date:   2017-02-06 11:14:49 +0200
 categories: devops learn tips
 ---
 
