@@ -238,3 +238,7 @@ Click the * Star to the right of `Movie` & `Person`
 The graphic representation of the database should appear
 
 ![neo4j-graph-database]({{ site.url }}/assets/neo4j-graph-database.png)
+
+# Summary
+
+Learning something new can be a lot of a hard work, with the help of `docker` setting up a service is pretty quick, and in this case the specific task of learning how to export/import is now understood without the need to learn a whole lot of installation and configuration material.
