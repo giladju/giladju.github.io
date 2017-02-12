@@ -77,6 +77,7 @@ filter_plugins = ansible_plugins/filter_plugins
 ## The playbook `vpc.yml`
 
 ```
+{% raw %}
 ---
 # play.yml
 - hosts: localhost
@@ -205,4 +206,5 @@ filter_plugins = ansible_plugins/filter_plugins
         - "{{ vpc_list }}"
         - "{{ ec2_webserver_out.results }}"
         - "{{ ec2_nat_out.results }}"
+{% endraw %}
 ```
