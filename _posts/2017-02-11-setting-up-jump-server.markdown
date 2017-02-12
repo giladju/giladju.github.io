@@ -14,3 +14,11 @@ The solution is a Jump server in your data center / cloud network
 ![]({{ site.url }}/assets/ssh-jump-host.png)
 
 
+Host jump
+    HostName jump.ocdvlp.com
+    User giladjudes
+    ForwardAgent yes
+ssh-add ~/.ssh/bamboo.pem
+ssh-add ~/.ssh/id_rsa
+ssh-add ~/.ssh/jumphost-key.pem
+ssh-add ~/.ssh/test-us-east-1-key.pem
