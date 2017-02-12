@@ -20,6 +20,11 @@ The following recommended reading is based on a few basic assumptions:
 
 ## Linux command line basics
 
+* [linuxmint.com tutorial](https://community.linuxmint.com/tutorial/view/244)
 * [linuxcommand.org](http://linuxcommand.org/)
 * [bash 101](https://www.linux.com/learn/bash-101-working-cli)
 
+## SSH Key access to servers
+
+* [Configure SSH Key-Based Authentication](https://www.digitalocean.com/community/tutorials/how-to-configure-ssh-key-based-authentication-on-a-linux-server)
+* [Setting up SSH jump server]({{ site.baseurl }}{% link _posts/2017-02-11-setting-up-jump-server.markdown %})
