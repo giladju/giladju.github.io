@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Devops insights from getting your cable tv to work"
-date:   2017-02-11 11:14:49 +0200
+date:   2017-02-20 11:14:49 +0200
 categories: devops learn tips troubleshooting
 ---
 
