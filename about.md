@@ -4,6 +4,8 @@ title: About me
 permalink: /about/
 ---
 
+{% include advertising.html %}
+
 **Gilad Judes**
 
 Married+3, cyclists, graveler 
