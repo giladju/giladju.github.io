@@ -48,7 +48,7 @@ Host jump
     ForwardAgent yes
 ```
 
-## Make sure you public keys are placed correctly
+## Make sure you public key is placed correctly on the Jump server
 
 To generate a public key from your private key:
 
@@ -66,7 +66,7 @@ On the Jump server:
 
 Place the public key on the servers in the user's home directory `.ssh` folder in the `authorized_keys` file
 
-For example, see the figure above:
+Place the public keys on the rest of the servers as defined in the this table:
 
 |user|server|public key of|
 |---|---|---|
