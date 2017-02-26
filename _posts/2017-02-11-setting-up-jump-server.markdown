@@ -22,6 +22,8 @@ The solution is ssh forwarding through the Jump server in your data center / clo
 
 ## Adding keys to ssh-agent
 
+On your PC, do the following:
+
 In order for the `ssh-agent` to handle the forwarding of your keys you will need to `add` them
 
 Add the following to your `~/.bashrc` (or the corresponding init script of your user)
@@ -34,6 +36,8 @@ ssh-add ~/.ssh/test-key.pem
 ```
 
 ## Configure you ssh client to Forward keys when accessing the jump host
+
+Still on your PC: 
 
 Add the following to the `~/.ssh/config`
 
@@ -57,6 +61,8 @@ You shoud get a public key:
 ```
 ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCQwxmLonT5JrZUklPCm9N2PycyhJiGioNwfMLgsA2OYqI9ndoMj7eNK4yH3r32M4cBFgG8Y3Nw9hLhAXIA2GfuKSiSfdGepAn6Un/zm1j4LwKZGA/1wdekhIL8pmkNdLZU/N4iAdAvZJ3WPFqaLmFlz7t9AuoPodCF7dPFStBPBcxys17GruxhqnCeoXxjs59P1MsOmucu2dU85yfbKDEinVxuHI5mfH+AEm0zB2GZdBnUUs1gFmm7VT743ELINjVGF36zrtQZUj90ZxirQtfhdJrGjW83hrvlY+6ACuGZcuAGiOm0BhT6LTaUHUU4l0AziWTWgbPzEITQyGQ16hmR
 ```
+
+On the Jump server: 
 
 Place the public key on the servers in the user's home directory `.ssh` folder in the `authorized_keys` file
 
