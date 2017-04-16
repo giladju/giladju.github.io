@@ -13,7 +13,7 @@ This post is based on this [page](http://blog.halberom.co.uk/ansible_pub_priv_vp
 
 In the following `ansible` playbook a VPC is set up with a NAT vm to be used by servers in the Private subnet and a single Web Server vm in the Public subnet
 
-## Prerequsites
+## Prerequisites
 
 **Install Python package `boto`**
 

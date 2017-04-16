@@ -9,13 +9,13 @@ categories: devops learn tips
 
 A fair amount of time while "devopsing" is spent on troubleshooting.
 
-On many occations it is a battle to figure out why the deployment process, that in itself is a combination of integrations between various softwares, is misplacing, or misconfiguring files on the system you are attempting to integrate/deploy.
+On many occasions it is a battle to figure out why the deployment process, that in itself is a combination of integrations between various softwares, is misplacing, or mis-configuring files on the system you are attempting to integrate/deploy.
 
-On a recent project I was asked to remove unwanted files from the git repo. A seemingly strightforward task, instead of having the files in the git repo, they should be added during the deployment process, in this case copied from AWS S3 to the EC2 server.
+On a recent project I was asked to remove unwanted files from the git repo. A seemingly straightforward task, instead of having the files in the git repo, they should be added during the deployment process, in this case copied from AWS S3 to the EC2 server.
 
 So I proceeded to `git rm` the files, created a folder in an [S3 Bucket](http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html), created an [IAM policy](https://aws.amazon.com/blogs/security/writing-iam-policies-how-to-grant-access-to-an-amazon-s3-bucket/) added it to the EC2 instance [role](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html)
 
-I then created an [AWS ElasticBeanstalk extention config file](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/ebextensions.html) that pulls the files from s3 to the right place on the server. 
+I then created an [AWS ElasticBeanstalk extension config file](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/ebextensions.html) that pulls the files from s3 to the right place on the server. 
 
 Something like this `.ebextensions/privatefiles.config`:
 
@@ -39,7 +39,7 @@ container_commands:
 
 Everything seemed to be in place
 
-So I commited the code to git, and pushed to the server, and the Continuous Integration process kicked in. The build started in [Bamboo](https://www.atlassian.com/software/bamboo), once completed I deployed the Release with the Artifact just created. 
+So I committed the code to git, and pushed to the server, and the Continuous Integration process kicked in. The build started in [Bamboo](https://www.atlassian.com/software/bamboo), once completed I deployed the Release with the Artifact just created. 
 
 The deployment process included a Task to deploy to AWS ElasticBeanstalk, and even though I had an example from another `.ebextention` config file that pulls the SSL certificates from S3 to the right place - the files I was looking to pull did not appear under `/var/app/current/resources`.
 
@@ -72,7 +72,7 @@ If we were to run a search for a string in ALL the files in the directory, like 
 grep -r ERROR .
 ```
 
-It would take a long time and might yeild reduandant results
+It would take a long time and might yield redundant results
 
 So let's search, only in the log files:
 
@@ -107,7 +107,7 @@ echo "############# `date +%H:%M:%S` ############" ; \
 sleep 5  ; done
 ```
 
-And from the output of the script I learned that my files were indeed placed in the right directory but only for a moment, as right after the "correct" copy, the directory is overwriten by the next ElasticBeanstalk deployment step.
+And from the output of the script I learned that my files were indeed placed in the right directory but only for a moment, as right after the "correct" copy, the directory is overwritten by the next ElasticBeanstalk deployment step.
 
 Bottom line - I figured out that the files needed to placed in the temporary source directory prior to the deployment step - and so will end up, eventually in the right place.
 

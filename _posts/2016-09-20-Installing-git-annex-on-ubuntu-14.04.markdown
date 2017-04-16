@@ -8,7 +8,7 @@ categories: devops ubuntu git annex
 # The problem
 
 `git annex` is a bit tricky, and I found that things have improved in later versions of the package, but the latest version available by default for Ubuntu 14.04 is from 2014 when in fact the fixes I needed were in the version from 2015
-So, following are instuction on how to install the latest version, enjoy 
+So, following are instructions on how to install the latest version, enjoy 
 
 # Prepare for installing
 

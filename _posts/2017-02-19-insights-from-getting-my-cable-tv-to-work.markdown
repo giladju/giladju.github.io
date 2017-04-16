@@ -11,11 +11,11 @@ categories: devops learn tips troubleshooting
 
 Says the [ThinkGeek t-shirt](http://www.thinkgeek.com/product/388b/)
 
-Us devops dudes are required to fix all the computer issues for the extended family, and quite rightly, as we are most quilified to figure out what has gone wrong on the PC, home network, or excel sheet. Well, not the excel sheet, but you get the idea. 
+Us devops dudes are required to fix all the computer issues for the extended family, and quite rightly, as we are most qualified to figure out what has gone wrong on the PC, home network, or excel sheet. Well, not the excel sheet, but you get the idea. 
 
-Sarcasm aside, I recently encounted issues with our home internet-based cable TV provider, and resolving these issues brought me to write this post.
+Sarcasm aside, I recently encountered issues with our home Internet-based cable TV provider, and resolving these issues brought me to write this post.
 
-Recently one of the Israeli cellular providers, namely Cellcom, has branched into Home TV providing, they have an interesting solution that is based on a combination of DVB-T and internet connectivity.
+Recently one of the Israeli cellular providers, namely Cellcom, has branched into Home TV providing, they have an interesting solution that is based on a combination of DVB-T and Internet connectivity.
 
 My network setup at home is based on a ADSL connection, a router with Wifi for the ground floor, a connection to the top floor through power line adapters. 
 
@@ -25,29 +25,29 @@ One more important piece of information is that the telephone line over which th
 
 At first both Cellcom boxes worked well. The VOD feature worked fine on the box downstairs near the ADSL router and on the one upstairs. 
 
-At some stage, the top floor cellcom box stopped working well over the internet, the DVB-T recepetion remained, and the internet connection test, on the box, showed Good connectivity.
+At some stage, the top floor cellcom box stopped working well over the Internet, the DVB-T reception remained, and the Internet connection test, on the box, showed Good connectivity.
 
 ## Getting support
 
-I called Cellcom support, to their credit they answer pretty quickly and are very obliging. The tech-support guy claimed my internet connection was under par. Cellcom requires we have a 40Mbps connection at least - we have a 100Mbps connection. After a bit of negotiation I was convinced to take the problematic Cellcom box downstairs and switch it with the one that was working. 
+I called Cellcom support, to their credit they answer pretty quickly and are very obliging. The tech-support guy claimed my Internet connection was under par. Cellcom requires we have a 40Mbps connection at least - we have a 100Mbps connection. After a bit of negotiation I was convinced to take the problematic Cellcom box downstairs and switch it with the one that was working. 
 
 At this stage, the tech support escalated the issue and called in his supervisor. 
 
 On my side I realized two things. 
 
 * The box originally from the top floor was not operating well, i.e. no VOD reception, while the other had VOD working on it, with no problems
-* The Cellcom tech observation that our internet connection was under par was correct, running a speed test on a computer connected directly to the ADSL router was showing 16Mbps, when I was expecting something closer to the 100Mbps we are paying for.
+* The Cellcom tech observation that our Internet connection was under par was correct, running a speed test on a computer connected directly to the ADSL router was showing 16Mbps, when I was expecting something closer to the 100Mbps we are paying for.
 
 ## Solutions
 
 After reconnecting with Cellcom support, this time with the a more senior tech, we managed to reset the connection of the 2nd Cellcom box. To be frank, I'm not sure what was done, if it was a reset on the server side, or a remote reset on the client side, but either way, the problem was resolved. Meaning the top-floor box was now showing VOD content as well as the bottom-floor box.
 First problem solved.
 
-I was still getting poor internet connectivity, and as there are more end users at home, as you might imagine, mainly my boys playing endlessly on Minecraft, that needed to be resolved as well.
+I was still getting poor Internet connectivity, and as there are more end users at home, as you might imagine, mainly my boys playing endlessly on Minecraft, that needed to be resolved as well.
 
-If you recall, I mentioned above that the actual phone line on the ground floor was a relatively recent addition, so I thought of switching the ADSL router and second router. The top floor had a telephony socket that seemed better connected, so I moved the ADSL router there, and through the same power line adapters connected it downstairs to the groundfloor router. 
+If you recall, I mentioned above that the actual phone line on the ground floor was a relatively recent addition, so I thought of switching the ADSL router and second router. The top floor had a telephony socket that seemed better connected, so I moved the ADSL router there, and through the same power line adapters connected it downstairs to the ground-floor router. 
 
-Running speedtests on computers connected to both routers yielded much better speeds and reception in all the house is now has much better internet connectivity. 
+Running speed-tests on computers connected to both routers yielded much better speeds and reception in all the house is now has much better Internet connectivity. 
 
 ## Insights
 
@@ -65,10 +65,10 @@ There is the famous saying:
 
 > When you assume you make an *Ass* of *U* and *Me*
 
-Base your conclutions on your findings, not your gut feelings. 
-Many years back, an senior engineer told me the 90% of Linux issues are those of Permissions and Ownership. Same goes to network connectiviy issues in AWS, you'd best start looking for solutions in the Security Groups. These insights are all good and well, and come following a lot of hard earned experience, but still, keep your mind open. 
+Base your conclusions on your findings, not your gut feelings. 
+Many years back, an senior engineer told me the 90% of Linux issues are those of Permissions and Ownership. Same goes to network connectivity issues in AWS, you'd best start looking for solutions in the Security Groups. These insights are all good and well, and come following a lot of hard earned experience, but still, keep your mind open. 
 
-In this case, there was one symptom, i.e. the VOD feature not working, knowing the internet connection was poor I could assume this was the issue, but the underlying circumstances were not identical, which brings me to the second insight:
+In this case, there was one symptom, i.e. the VOD feature not working, knowing the Internet connection was poor I could assume this was the issue, but the underlying circumstances were not identical, which brings me to the second insight:
 
 **A/B tests**
 
@@ -83,5 +83,5 @@ When you are troubleshooting an issue, find out when the issue arose, check if y
 
 **Follow through**
 
-Any Tennis coach will tell you that you need to follow through on your swing. Same here, so you started of with one symptom (no VOD) and discoved another underlying issue (poor internet connectivity)? 
+Any Tennis coach will tell you that you need to follow through on your swing. Same here, so you started of with one symptom (no VOD) and discovered another underlying issue (poor Internet connectivity)? 
 Resolve them both, don't leave an open issue dangling.

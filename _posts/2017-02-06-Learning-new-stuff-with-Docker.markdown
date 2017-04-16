@@ -33,7 +33,7 @@ sudo usermod -aG docker $USER
 sudo reboot
 ```
 
-### Prepare your file system for two docker containters 
+### Prepare your file system for two docker containers 
 
 Prepare Logs and Data directories for first docker 
 
