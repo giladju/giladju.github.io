@@ -53,4 +53,35 @@ There is a lot of to be said regarding limiting access in AWS, but it would be n
 
 So this is where I am stuck for now, waiting for my friendly Admin to wake up ...
 
-**To Be Continued ...**
+## Building - after getting permissions
+
+Well, only after getting AWS Admin permissions could I continue.
+
+So now the `AWS CodePipeline` has the first two of three Continuous Deployment steps in place:
+
+* Source 
+* Build
+
+Took a bit of documentation reading, but in the end, a basic "build" step was put in place that does the basics of packing all the `node.js` code in a zip file
+
+## Deployment 
+
+The Deployment step requires you setup an `AWS ElasticBeanstalk` Application and Environment. Pretty trivial for someone familiar with AWS EB, but might require a bit of tinkering for someone new to the module.
+
+## Conclusion
+
+![]({{ site.url }}/assets/aws-pipeline.png) 
+
+First of all, one has to admit, it works - we now have a Continuous Integration Pipeline up and running, without redundant servers (i.e. Jenkins). 
+
+I.e. completely based on AWS modules, and minimum cost, presumably only paying extra for the Build time (above the cost of the environment servers)
+
+## Open issues
+
+1. The integration with GitHub required my user be an Admin on the specific git repo. Considering this is my private github account that is part of a company Continuous Integration process - this is a big no no
+2. The build process is pretty basic and has no cleanup process - i.e. old artifacts will remain in S3 until someone goes in and cleans them up 
+3. The "deployment" process in Elastic Beanstalk has no mechanism of "pausing" the environment so as not to waste money in EC2 uptime 
+
+
+
+
