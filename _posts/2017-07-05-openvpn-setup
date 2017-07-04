@@ -1,0 +1,83 @@
+
+# General 
+
+
+* Get your `user` and `password` from your friendly DevOps dude (@Dan)
+
+
+## VPN servers at OurCrowd
+
+
+* Test Environment: https://openvpn-test.ocdvlp.com
+* Production Environment: https://openvpn-prod.ocdvlp.com 
+
+
+# Linux Setup & Login
+ 
+## Linux Setup
+
+* Install OpenVPN client as instructed [here](https://openvpn.net/index.php/access-server/docs/admin-guides/182-how-to-connect-to-access-server-with-linux-clients.html)
+* Login to the web interface of VPN server with `user` and `password`
+* Note the link: **Yourself (user-locked profile)** - press it and download the file `client.ovpn`
+* Rename the file according to the Environment, e.g. `client-prod.ovpn` & `client-test.ovpn` 
+* Place in a specific directory - e.g. `~/Documents/VPN/client-prod.ovpn` & `~/Documents/VPN/client-test.ovpn`
+
+
+## Linux Login
+
+
+* To login to the Test environment run: `sudo openvpn --config ~/Documents/VPN/client-test.ovpn`
+* To login to the Prod environment run: `sudo openvpn --config ~/Documents/VPN/client-prod.ovpn`
+* Enter your `user` and `password`
+* Wait until you get:
+
+
+```
+Tue May 16 14:47:40 2017 Initialization Sequence Completed
+```
+
+
+> Now you can `ssh` or open Remote Desktop to Linux and Windows servers accordingly
+
+# Windows Setup & Login
+
+
+## Windows Setup
+
+
+* Go to VPN URL - e.g. for test https://openvpn-test.ocdvlp.com
+* Press the Link *OpenVPN Connect for Windows*
+* Download the Windows Installer Package
+* Run the Installation - you might be required to restart the PC
+* In the TrayBox make sure the OpenVPN orange Icon Appears - if not run the OpenVPN application
+* Right Mouse Button on the Icon - select Connect
+* Enter User and Password
+* Windows should pop up a message saying you are connected - and the Orange Icon should indicate you are connected 
+* **NOTE!** for setting up the second VPN server you will need to Login separately to the other envrinoment - i.e. Prod: https://openvpn-prod.ocdvlp.com
+  * Download thee Connection Profile file - bottom most link titled *Yourself (user-locked profile)*
+  * Make sure you are logged out from the Test VPN 
+  * Right Mouse Click on the OpenVPN Icon - Import/From file - select the file you just downloaded
+
+
+> Now you can `ssh` with PuTTY or open Remote Desktop to Linux and Windows servers accordingly
+
+
+
+
+
+# **Administrator section - do not change ! ever !**
+
+|**VPC Component**|Production VPC|Test VPC|
+|---|---|---|
+|VPC ID|vpc-318c1c55|vpc-800bbfe4|
+|CIDR|172.16.0.0/16|172.30.0.0/16|
+|Public Subnet 1|172.16.0.0/24|172.30.0.0/24|
+|VPN Instance Private IP|172.16.0.108|172.30.0.156|
+|VPN Instance EIP|52.54.205.101|52.22.23.46|
+|Security Group|sg-b43d4dca|sg-e93e4e97|
+
+
+All VPN servers launched from marketplace AMI: `ami-44aaf953`
+
+Admin ssh user: `openvpnas`
+
