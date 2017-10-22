@@ -18,11 +18,11 @@ In the case you would like to "discover" what is the size of the server that ans
 Add to your tasks in the role a `set_fact`
 
 
-```
+{% raw %}
     - name: set_fact ec2 server type
       set_fact:
         ec2_server_type: "{{ vars.hostvars[ansible_host].ec2_instance_type | replace('.','_') }}"
-```
+{% endraw %}
 
 The above finds the current `ansible_host`'s `ec2_instance_type`
 

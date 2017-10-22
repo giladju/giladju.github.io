@@ -15,21 +15,21 @@ See the documentation [here](http://docs.ansible.com/ansible/latest/intro_dynami
 
 In this example we have a system that works solely with AWS Auto Scale Groups, in effect the list of Launch Configurations (`lcs`) holds the list of services:
 
-```
+{% raw %}
 lcs:
   - role: frontend
   - role: management
   - role: backend
   - role: algo
   - role: zookeeper
-``` 
+{% endraw %}
 
 The `frontend` and the `management` services are customer facing and will run behind an ELB, while the `backend` and `algo` services will run internally and with an Application Load Balancer.
 The `zookeeper` service will run internally, but not behind any load balancer
 
 So the detailed `lcs` dictionary looks like this:
 
-```
+{% raw %}
 lcs:
   - role: frontend
     subnet: private
@@ -76,14 +76,14 @@ lcs:
       - device_name: /dev/sda1
         volume_size: 8
     zk: True
-```
+{% endraw %}
 
 ### Ansible Role Tasks looping through the above dictionary
 
 In order to create the corresponding Launch Configurations the following three loops need to be created:
 Note the filtering of the dictionary using `|` and `selectattr`
 
-```
+{% raw %}
 - name: create customer facing services launchconfigurations
   with_items: "{{ lcs|selectattr('elb', 'defined')|selectattr('elb')|list }}"
   ec2_lc:
@@ -102,7 +102,7 @@ Note the filtering of the dictionary using `|` and `selectattr`
     name: "LC-{{ envname }}-{{ item.role }}"
     .
     .
-```
+{% endraw %}
 
 So assuming our Environment name is `staging` we will get 5 Launch Configurations:
 
