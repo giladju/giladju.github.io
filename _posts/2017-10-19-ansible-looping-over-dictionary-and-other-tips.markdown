@@ -24,7 +24,7 @@ lcs:
   - role: zookeeper
 ``` 
 
-In this example the `frontend` and the `management` services are customer facing and will run behind an ELB, while the `backend` and `algo` services will run internally and with an Application Load Balancer.
+The `frontend` and the `management` services are customer facing and will run behind an ELB, while the `backend` and `algo` services will run internally and with an Application Load Balancer.
 The `zookeeper` service will run internally, but not behind any load balancer
 
 So the detailed `lcs` dictionary looks like this:
@@ -80,7 +80,7 @@ lcs:
 
 ### Ansible Role Tasks looping through the above dictionary
 
-So in order to create the corresponding Launch Configurations the following three loops need to be created:
+In order to create the corresponding Launch Configurations the following three loops need to be created:
 Note the filtering of the dictionary using `|` and `selectattr`
 
 ```
