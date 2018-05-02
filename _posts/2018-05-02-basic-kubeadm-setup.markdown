@@ -8,8 +8,8 @@ categories: devops kubernetes kubeadm kubectl ubuntu docker
 
 ## 'Hardware'
 
-Master - PC with Ubuntu 18.04 LTS
-Node - VirtualBox with Ubuntu 16.04 LTS
+* Master - PC with Ubuntu 18.04 LTS
+* Node - VirtualBox with Ubuntu 16.04 LTS
 
 ## `kubeadm` installation 
 
