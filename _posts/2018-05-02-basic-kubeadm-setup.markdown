@@ -1,10 +1,9 @@
 ---
 layout: post
 title:  "basic setup of kubeadm on Ubuntu servers"
-date:   2018-05-0r23 05:14:49 +0200
+date:   2018-05-02 05:14:49 +0200
 categories: devops kubernetes kubeadm kubectl ubuntu docker
 ---
-
 # `kubeadm` basic setup
 
 ## 'Hardware'
