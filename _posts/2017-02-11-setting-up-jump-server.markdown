@@ -20,7 +20,7 @@ The solution is ssh forwarding through the Jump server in your data center / clo
 
 ![]({{ site.url }}/assets/ssh-jump-host.png)
 
-## Adding keys to ssh-agent
+## Adding keys to the ssh-agent
 
 On your PC, do the following:
 
@@ -35,7 +35,7 @@ ssh-add ~/.ssh/jumphost-key.pem
 ssh-add ~/.ssh/test-key.pem
 ```
 
-## Configure you ssh client to Forward keys when accessing the jump host
+## Configure your ssh client to Forward keys when accessing the jump host
 
 Still on your PC: 
 
@@ -48,7 +48,7 @@ Host jump
     ForwardAgent yes
 ```
 
-## Make sure you public key is placed correctly on the Jump server
+## Make sure your public key is placed correctly on the Jump server
 
 To generate a public key from your private key:
 
