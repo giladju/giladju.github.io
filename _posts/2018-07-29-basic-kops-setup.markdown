@@ -65,3 +65,102 @@ To access the bastion server:
 ```
 ssh -A admin@`aws elb --region=us-east-2 --output=table describe-load-balancers|grep DNSName.\*bastion|awk '{print $4}'`
 ```
+
+## Setting up a Kubernetes Service and Deployment
+
+Lets say you want to setup a Web site service running `nginx`
+
+First create a `namespace` so in future you can run multiple environments on the same cluster
+
+Create a file `namespace.yaml`:
+
+```
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: mysite-dev
+```
+
+Run the following command:
+
+```
+kubectl apply -f ./namespace.yaml`
+```
+
+Now lets create a Kubernetes Service - i.e. an external Load Balancer in front of the dockers running `nginx` that will be setup momentarily 
+
+
+Create a file: `service.yaml`
+
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: mywebsite
+  namespace: mysite-dev
+spec:
+  selector:
+    app: mywebsite
+  ports:
+  - protocol: TCP
+    port: 80
+  type: LoadBalancer
+```
+
+Run:
+
+```
+kubectl -n mysite-dev apply -f ./service.yaml
+```
+
+Check your AWS account for a new Loadbalancer that two instances attached - currently un-healthy
+
+Create a `deployment.yaml` file:
+
+```
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: mywebsite
+  namespace: mysite-dev
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: mywebsite
+    spec:
+      containers:
+        - name: nginx
+          image: nginx:1.7.9
+        ports:
+        - containerPort: 80
+```
+
+Run:
+
+```
+kubectl -n mysite-dev apply -f deployment.yaml
+```
+
+## Verification
+
+1. Check the `nginx` pods have come up by running this command:
+
+```
+kubectl -n mysite-dev get pods
+```
+
+At first the pods will appear in status `ContainerCreating` and eventually `Running`
+
+E.g. 
+
+```
+NAME                       READY     STATUS    RESTARTS   AGE
+mywebsite-5fbc6664-b26nf   1/1       Running   0          4m
+mywebsite-5fbc6664-n25kl   1/1       Running   0          4m
+```
+
+2. Check the AWS Service Load Blanacer has to Instances `InService`
+
+3. Open the External URL of the ELB in port 80 - you should get the default nginx page 
