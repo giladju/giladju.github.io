@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Dynamic creation of Route53 entries for Kubernetes services"
-date:   2018-12-13 05:14:49 +0200
+date:   2018-12-19 05:14:49 +0200
 categories: devops kubernetes helm kubectl ansible docker
 ---
 # Creating DNS entries to cryptic Kubernets Service AWS ELBs
